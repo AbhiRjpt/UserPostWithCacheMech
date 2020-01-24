@@ -1,0 +1,44 @@
+package com.ranag.exception;
+
+public class InternalErrorCodes {
+
+    public static final int EMAILID_ALREADY_EXISTS = 1001;
+    public static final int PHONE_ALREADY_EXISTS = 1002;
+
+    public static final int INVALID_USER_ID = 2001;
+    public static final int INVALID_USER_CREDENTIALS = 2002;
+    public static final int INVALID_BILL_ID = 2003;
+    public static final int INVALID_POST_ID = 2004;
+    public static final int INVALID_ARTICLE_ID = 2005;
+
+    public static final int INTERNAL_SERVER_ERROR = 3001;
+    public static final int TEMPLATE_NAME_ALREADY_EXITS = 3002;
+    public static final int API_FAILED = 3003;
+    public static final int BILL_ID_MISSING = 3004;
+    public static final int USER_CREATION_FAILED = 3005;
+    public static final int POST_CREATION_FAILED = 3006;
+    public static final int POST_UPDATION_FAILED = 3007;
+    public static final int ARTICLE_CREATION_FAILED = 3008;
+    public static final int ARTICLE_UPDATION_FAILED = 3009;
+
+
+    public static final int INVALID_USER_ROLE = 4001;
+    public static final int NOT_COMPATIBLE_ROLE = 4002;
+    public static final int INVALID_REQUEST_DATA = 4003;
+    public static final int NOT_FOUND = 4004;
+    public static final int DATA_ALREADY_EXISTS = 4005;
+
+
+    public static final int NO_USERID_IN_REQUEST = 5001;
+    public static final int OPERATION_NOT_PERMITTED = 5002;
+    public static final int USERKEY_OR_PASSWORD_MISSING = 5003;
+
+
+
+
+
+
+
+
+
+}
