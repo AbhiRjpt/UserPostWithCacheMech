@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/UserModule/UserModule.iml" filepath="$PROJECT_DIR$/UserModule/UserModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserPostWithCacheMech.iml" filepath="$PROJECT_DIR$/UserPostWithCacheMech.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-module/commons-module.iml" filepath="$PROJECT_DIR$/commons-module/commons-module.iml" />
+    </modules>
+  </component>
+</project>
