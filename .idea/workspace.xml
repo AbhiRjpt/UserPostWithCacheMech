@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa70e19c-7992-4b22-acc1-6d026697d8a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/rest/bean/response/UserFetchedArticleResponseData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/rest/bean/response/UserFetchedPostResponseData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/rest/bean/response/UserFetchedResponseData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/config/ServiceConf.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/config/ServiceConf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/rest/bean/response/UserResponseData.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/rest/bean/response/UserResponseData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/rest/controller/UserServiceApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/rest/controller/UserServiceApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/src/main/java/com/ranag/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/target/UserModule-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/target/classes/com/ranag/config/ServiceConf.class" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/target/classes/com/ranag/config/ServiceConf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/target/classes/com/ranag/rest/bean/response/UserResponseData.class" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/target/classes/com/ranag/rest/bean/response/UserResponseData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/target/classes/com/ranag/rest/controller/UserServiceApiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/target/classes/com/ranag/rest/controller/UserServiceApiController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/target/classes/com/ranag/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/target/classes/com/ranag/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserModule/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/UserModule/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/common/cache/RedisCacheMechanism.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/common/cache/RedisCacheMechanism.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/rest/bean/commons/UserArticleData.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/rest/bean/commons/UserArticleData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/rest/bean/commons/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/rest/bean/commons/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/rest/bean/commons/UserPostData.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/rest/bean/commons/UserPostData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/service/RequestValidationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/src/main/java/com/ranag/service/RequestValidationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/common/cache/RedisCacheMechanism.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/common/cache/RedisCacheMechanism.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/rest/bean/commons/UserArticleData.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/rest/bean/commons/UserArticleData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/rest/bean/commons/UserData.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/rest/bean/commons/UserData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/rest/bean/commons/UserPostData.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/rest/bean/commons/UserPostData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/service/RequestValidationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/target/classes/com/ranag/service/RequestValidationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/target/commons-module-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/target/commons-module-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons-module/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/commons-module/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="fa70e19c-7992-4b22-acc1-6d026697d8a4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +15,14 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -118,10 +93,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Master Commit: User Post With Cache Mechanism" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="240" y="43" key="#Notifications" timestamp="1579900422574">
+    <state x="240" y="43" key="#Notifications" timestamp="1580028211171">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
-    <state x="240" y="43" key="#Notifications/0.23.1280.709@0.23.1280.709" timestamp="1579900422574" />
+    <state x="240" y="43" key="#Notifications/0.23.1280.709@0.23.1280.709" timestamp="1580028211171" />
     <state x="756" y="150" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1579890149398">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
@@ -142,10 +117,18 @@
       <screen x="0" y="23" width="1280" height="709" />
     </state>
     <state x="312" y="23" key="CommitChangelistDialog2/0.23.1280.709@0.23.1280.709" timestamp="1579900381690" />
-    <state x="240" y="117" key="Vcs.Push.Dialog.v2" timestamp="1579900411339">
+    <state x="100" y="123" width="1080" height="509" key="DiffContextDialog" timestamp="1580028284948">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
-    <state x="240" y="117" key="Vcs.Push.Dialog.v2/0.23.1280.709@0.23.1280.709" timestamp="1579900411339" />
+    <state x="100" y="123" width="1080" height="509" key="DiffContextDialog/0.23.1280.709@0.23.1280.709" timestamp="1580028284948" />
+    <state x="240" y="117" key="Vcs.Push.Dialog.v2" timestamp="1580028279544">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="240" y="117" key="Vcs.Push.Dialog.v2/0.23.1280.709@0.23.1280.709" timestamp="1580028279544" />
+    <state x="100" y="123" width="1080" height="509" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1580028284953">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="100" y="123" width="1080" height="509" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.23.1280.709@0.23.1280.709" timestamp="1580028284953" />
     <state x="319" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1580020779369">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
@@ -158,6 +141,10 @@
       <screen x="0" y="23" width="1280" height="709" />
     </state>
     <state x="306" y="134" width="667" height="486" key="find.popup/0.23.1280.709@0.23.1280.709" timestamp="1579899766057" />
+    <state x="393" y="176" key="git4idea.merge.GitMergeDialog" timestamp="1580028231917">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="393" y="176" key="git4idea.merge.GitMergeDialog/0.23.1280.709@0.23.1280.709" timestamp="1580028231917" />
     <state x="34" y="23" key="new project wizard" timestamp="1579889541028">
       <screen x="0" y="23" width="1280" height="709" />
     </state>
