@@ -117,12 +117,14 @@ public class UserService {
 
     private UserData fetchUserData(int userId) {
         String userCachekKey = RedisCacheMechanism.getUserCacheKey(userId);
-        System.out.println("cacheKey: "+userCachekKey);
+        System.out.println("userCachekKey: "+userCachekKey);
+        System.out.println("-----FETCHING DATA FROM CACHE------------");
         UserData userData = (UserData) RedisCacheMechanism.get(userCachekKey,UserData.class);
 //        System.out.println("userDATA: "+userData.toString());
         if(userData == null){
             System.out.println("-----FETCHING FROM DB------");
             userData = new UserDaoImpl().getUserDataFromDb(userId);
+            System.out.println("-----SETTING DATA IN CACHE IF NOT FOUND ALREADY------------");
             RedisCacheMechanism.set(userCachekKey, JsonConverter.getJson(userData));
         }
 
@@ -141,9 +143,12 @@ public class UserService {
 
     private UserPostData fetchUserPostData(int userId, int postId) {
         String userPostCachekKey = RedisCacheMechanism.getUserPostCacheKey(userId,postId);
+        System.out.println("userPostCachekKey: "+userPostCachekKey);
+        System.out.println("-----FETCHING DATA FROM CACHE------------");
         UserPostData userPostData = (UserPostData) RedisCacheMechanism.get(userPostCachekKey,UserPostData.class);
         if(userPostData == null){
             userPostData = new UserDaoImpl().getUserPostDataFromDb(userId,postId);
+            System.out.println("-----SETTING DATA IN CACHE IF NOT FOUND ALREADY------------");
             RedisCacheMechanism.set(userPostCachekKey, JsonConverter.getJson(userPostData));
         }
 
@@ -162,9 +167,12 @@ public class UserService {
 
     private UserArticleData fetchUserArticleData(int userId, int articleId) {
         String userArticleCachekKey = RedisCacheMechanism.getUserArticleCacheKey(userId,articleId);
+        System.out.println("userArticleCachekKey: "+userArticleCachekKey);
+        System.out.println("-----FETCHING DATA FROM CACHE------------");
         UserArticleData userArticleData = (UserArticleData) RedisCacheMechanism.get(userArticleCachekKey,UserArticleData.class);
         if(userArticleData == null){
             userArticleData = new UserDaoImpl().getUserArticleDataFromDb(userId,articleId);
+            System.out.println("-----SETTING DATA IN CACHE IF NOT FOUND ALREADY------------");
             RedisCacheMechanism.set(userArticleCachekKey, JsonConverter.getJson(userArticleData));
         }
 
