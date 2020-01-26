@@ -14,56 +14,63 @@ public class UserArticleData {
         return articleId;
     }
 
-    public void setArticleId(int articleId) {
+    public UserArticleData setArticleId(int articleId) {
         this.articleId = articleId;
+        return this;
     }
 
     public int getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public UserArticleData setUserId(int userId) {
         this.userId = userId;
+        return this;
     }
 
     public String getArticle_title() {
         return article_title;
     }
 
-    public void setArticle_title(String article_title) {
+    public UserArticleData setArticle_title(String article_title) {
         this.article_title = article_title;
+        return this;
     }
 
     public String getArticle_text() {
         return article_text;
     }
 
-    public void setArticle_text(String article_text) {
+    public UserArticleData setArticle_text(String article_text) {
         this.article_text = article_text;
+        return this;
     }
 
     public String getArticle_image() {
         return article_image;
     }
 
-    public void setArticle_image(String article_image) {
+    public UserArticleData setArticle_image(String article_image) {
         this.article_image = article_image;
+        return this;
     }
 
     public String getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(String created_at) {
+    public UserArticleData setCreated_at(String created_at) {
         this.created_at = created_at;
+        return this;
     }
 
     public String getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(String updated_at) {
+    public UserArticleData setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+        return this;
     }
 
     @Override

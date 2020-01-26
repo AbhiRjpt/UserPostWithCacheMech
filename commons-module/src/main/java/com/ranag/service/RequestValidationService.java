@@ -10,7 +10,15 @@ public class RequestValidationService {
     }
 
     public boolean validateUserId(int userId){
+        System.out.println("------Validating userId----");
         if(this.userDao.getUserKey(userId) > 0){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean validateId(int id){
+        if(id > 0){
             return true;
         }
         return false;

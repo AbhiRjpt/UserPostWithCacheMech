@@ -1,8 +1,10 @@
 package com.ranag.rest.bean.response;
 
+
 public class UserResponseData extends OrgResponseData {
     private int userId;
     private String userName;
+
 
     public int getUserId() {
         return userId;

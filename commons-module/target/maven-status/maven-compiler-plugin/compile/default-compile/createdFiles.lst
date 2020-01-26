@@ -1,3 +1,4 @@
+com/ranag/dao/impl/UserDaoImpl$16.class
 com/ranag/rest/bean/request/SimpleRequestData.class
 com/ranag/rest/bean/commons/UserArticleData.class
 com/ranag/service/RequestValidationService.class
@@ -31,6 +32,7 @@ com/ranag/common/restClient/OrgRestClientService.class
 com/ranag/dao/template/impl/QueryParameter$ParamKV.class
 com/ranag/common/serverEndPoint/ServerEndPointConstant.class
 com/ranag/dao/impl/UserDaoImpl$1.class
+com/ranag/dao/impl/UserDaoImpl$14.class
 com/ranag/dao/template/impl/DaoTemplateImpl.class
 com/ranag/dao/impl/UserDaoImpl$11.class
 com/ranag/dao/impl/UserDaoImpl$8.class
@@ -46,6 +48,7 @@ com/ranag/common/serverEndPoint/EndPointService.class
 com/ranag/rest/bean/request/UserCreationRequestData.class
 com/ranag/dao/impl/UserDaoImpl$9.class
 com/ranag/service/RestResponseService.class
+com/ranag/dao/impl/UserDaoImpl$15.class
 com/ranag/common/restClient/OrgRestClient$2.class
 com/ranag/dao/impl/UserDaoImpl$2.class
 com/ranag/common/restClient/OrgRestClient.class

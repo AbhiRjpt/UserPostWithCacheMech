@@ -1,12 +1,15 @@
 com/ranag/config/DaoConfig.class
 com/ranag/rest/bean/request/UserRequestData.class
 com/ranag/rest/bean/request/UserArticleRequestData.class
+com/ranag/rest/bean/response/UserFetchedArticleResponseData.class
+com/ranag/config/CorsConfig.class
+com/ranag/rest/bean/response/UserArticleResponseData.class
+com/ranag/rest/bean/response/UserFetchedResponseData.class
 com/ranag/startup/UserPostApplication.class
 com/ranag/config/ServiceConf.class
 com/ranag/service/UserService.class
-com/ranag/config/CorsConfig.class
 com/ranag/rest/controller/UserServiceApiController.class
+com/ranag/rest/bean/response/UserFetchedPostResponseData.class
 com/ranag/rest/bean/response/UserPostResponseData.class
 com/ranag/rest/bean/request/UserPostRequestData.class
-com/ranag/rest/bean/response/UserArticleResponseData.class
 com/ranag/rest/bean/response/UserResponseData.class

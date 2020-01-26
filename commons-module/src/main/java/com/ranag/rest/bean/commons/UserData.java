@@ -12,48 +12,54 @@ public class UserData {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public UserData setUserId(int userId) {
         this.userId = userId;
+        return this;
     }
 
     public String getUser_name() {
         return user_name;
     }
 
-    public void setUser_name(String user_name) {
+    public UserData setUser_name(String user_name) {
         this.user_name = user_name;
+        return this;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public UserData setEmail(String email) {
         this.email = email;
+        return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public UserData setPassword(String password) {
         this.password = password;
+        return this;
     }
 
     public String getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(String created_at) {
+    public UserData setCreated_at(String created_at) {
         this.created_at = created_at;
+        return this;
     }
 
     public String getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(String updated_at) {
+    public UserData setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+        return this;
     }
 
     @Override

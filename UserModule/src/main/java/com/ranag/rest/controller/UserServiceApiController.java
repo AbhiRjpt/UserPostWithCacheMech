@@ -167,5 +167,69 @@ public class UserServiceApiController {
         }
     }
 
+    @GetMapping("/getUserData/{userId}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response getUserData(@PathVariable("userId") int userId){
+        Response response = null;
+        System.out.println("userId: "+userId);
+        OrgResponseData orgResponseData = null;
+        try{
+            if(!requestValidationService.validateUserId(userId)) {
+                throw new InternalException("UserId is not valid,Please try again.", InternalErrorCodes.INVALID_USER_ID);
+            }
+            orgResponseData = userService.getUserData(userId);
+            response = restResponseService.createSuccessResponse(orgResponseData);
+
+        }catch (Exception e){
+            response = restResponseService.createFailureResponse(e, orgResponseData);
+        }
+        return response;
+    }
+
+
+    @GetMapping("/getUserPostData/{userId}/{postId}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response getUserPostData(@PathVariable("userId") int userId,@PathVariable("postId") int postId){
+        Response response = null;
+        OrgResponseData orgResponseData = null;
+        try{
+            if(!requestValidationService.validateUserId(userId)) {
+                throw new InternalException("UserId is not valid,Please try again.", InternalErrorCodes.INVALID_USER_ID);
+            }
+            if(!requestValidationService.validateId(postId)){
+                throw new InternalException("PostId is not valid, Please try again.",InternalErrorCodes.INVALID_POST_ID);
+            }
+            orgResponseData = userService.getUserPostData(userId,postId);
+            response = restResponseService.createSuccessResponse(orgResponseData);
+
+        }catch (Exception e){
+            response = restResponseService.createFailureResponse(e, orgResponseData);
+        }
+        return response;
+    }
+
+    @GetMapping("/getUserArticleData/{userId}/{articleId}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response getUserArticleData(@PathVariable("userId") int userId,@PathVariable("articleId") int articleId){
+        Response response = null;
+        OrgResponseData orgResponseData = null;
+        try{
+            if(!requestValidationService.validateUserId(userId)) {
+                throw new InternalException("UserId is not valid,Please try again.", InternalErrorCodes.INVALID_USER_ID);
+            }
+            if(!requestValidationService.validateId(articleId)){
+                throw new InternalException("Article_Id is not valid, Please try again.",InternalErrorCodes.INVALID_ARTICLE_ID);
+            }
+            orgResponseData = userService.getUserArticleData(userId,articleId);
+            response = restResponseService.createSuccessResponse(orgResponseData);
+
+        }catch (Exception e){
+            response = restResponseService.createFailureResponse(e, orgResponseData);
+        }
+        return response;
+    }
 
 }

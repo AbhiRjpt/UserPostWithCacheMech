@@ -1,14 +1,21 @@
 package com.ranag.service;
 
 import com.ranag.common.Helper;
+import com.ranag.common.JsonConverter;
+import com.ranag.common.cache.RedisCacheMechanism;
 import com.ranag.dao.impl.UserDaoImpl;
 import com.ranag.exception.InternalErrorCodes;
 import com.ranag.exception.InternalException;
+import com.ranag.rest.bean.commons.UserArticleData;
+import com.ranag.rest.bean.commons.UserData;
+import com.ranag.rest.bean.commons.UserPostData;
 import com.ranag.rest.bean.request.UserArticleRequestData;
 import com.ranag.rest.bean.request.UserPostRequestData;
 import com.ranag.rest.bean.request.UserRequestData;
 import com.ranag.rest.bean.response.*;
 import org.springframework.context.annotation.ComponentScan;
+
+import java.util.Arrays;
 
 @ComponentScan
 public class UserService {
@@ -94,5 +101,73 @@ public class UserService {
             throw new InternalException("User article updation request failed. Please try again.",InternalErrorCodes.ARTICLE_UPDATION_FAILED);
         }
         return responseData;
+    }
+
+    public UserFetchedResponseData getUserData(int userId) throws InternalException {
+        UserFetchedResponseData userResponseData = new UserFetchedResponseData();
+        System.out.println("---->>>userId: "+userId);
+        UserData userData = fetchUserData(userId);
+//        System.out.println("userData: "+userData.toString());
+        if(userData == null){
+            throw new InternalException("No Data found for userId: "+userId,InternalErrorCodes.NOT_FOUND);
+        }
+        userResponseData.setUserDataList(Arrays.asList(userData));
+        return userResponseData;
+    }
+
+    private UserData fetchUserData(int userId) {
+        String userCachekKey = RedisCacheMechanism.getUserCacheKey(userId);
+        System.out.println("cacheKey: "+userCachekKey);
+        UserData userData = (UserData) RedisCacheMechanism.get(userCachekKey,UserData.class);
+//        System.out.println("userDATA: "+userData.toString());
+        if(userData == null){
+            System.out.println("-----FETCHING FROM DB------");
+            userData = new UserDaoImpl().getUserDataFromDb(userId);
+            RedisCacheMechanism.set(userCachekKey, JsonConverter.getJson(userData));
+        }
+
+        return userData;
+    }
+
+    public OrgResponseData getUserPostData(int userId,int postId) throws InternalException {
+        UserFetchedPostResponseData userFetchedPostResponseData = new UserFetchedPostResponseData();
+        UserPostData userPostData = fetchUserPostData(userId,postId);
+        if(userPostData == null){
+            throw new InternalException("No Data found for userId: "+userId+" postid: "+postId,InternalErrorCodes.NOT_FOUND);
+        }
+        userFetchedPostResponseData.setUserPostDataList(Arrays.asList(userPostData));
+        return userFetchedPostResponseData;
+    }
+
+    private UserPostData fetchUserPostData(int userId, int postId) {
+        String userPostCachekKey = RedisCacheMechanism.getUserPostCacheKey(userId,postId);
+        UserPostData userPostData = (UserPostData) RedisCacheMechanism.get(userPostCachekKey,UserPostData.class);
+        if(userPostData == null){
+            userPostData = new UserDaoImpl().getUserPostDataFromDb(userId,postId);
+            RedisCacheMechanism.set(userPostCachekKey, JsonConverter.getJson(userPostData));
+        }
+
+        return userPostData;
+    }
+
+    public OrgResponseData getUserArticleData(int userId, int articleId) throws InternalException {
+        UserFetchedArticleResponseData responseData = new UserFetchedArticleResponseData();
+        UserArticleData articleData = fetchUserArticleData(userId,articleId);
+        if(articleData == null){
+            throw new InternalException("No Data found for userId "+userId+" article: "+articleId,InternalErrorCodes.NOT_FOUND);
+        }
+        responseData.setUserArticleDataList(Arrays.asList(articleData));
+        return responseData;
+    }
+
+    private UserArticleData fetchUserArticleData(int userId, int articleId) {
+        String userArticleCachekKey = RedisCacheMechanism.getUserArticleCacheKey(userId,articleId);
+        UserArticleData userArticleData = (UserArticleData) RedisCacheMechanism.get(userArticleCachekKey,UserArticleData.class);
+        if(userArticleData == null){
+            userArticleData = new UserDaoImpl().getUserArticleDataFromDb(userId,articleId);
+            RedisCacheMechanism.set(userArticleCachekKey, JsonConverter.getJson(userArticleData));
+        }
+
+        return userArticleData;
     }
 }

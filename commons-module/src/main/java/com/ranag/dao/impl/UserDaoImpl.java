@@ -15,7 +15,7 @@ public class UserDaoImpl {
 
     public int getUserKey(int userId) {
         final int[] userid = {0};
-        String sql = "Select userid from UserData where userid = ?";
+        String sql = "Select userid from UserDataSet where userid = ?";
         QueryParameter queryParameter = new QueryParameter().setInt(userId);
         new SingleRowQueryTemplateImpl(sql, queryParameter) {
             @Override
@@ -224,7 +224,7 @@ public class UserDaoImpl {
 
     public int createUser(UserData userData) {
         int[] userId = {0};
-        String sql = "INSERT INTO UserDataSet(user_name,email,password) VALUES(?,?,?)";
+        String sql = "INSERT INTO UserDataSet(user_name,email,userPassword) VALUES(?,?,?)";
         //For any confusions regarding templates please check in commons dao template package.
         // These have been created so that you don't have to make open and close connection for every sql query.
         QueryParameter queryParameter = new QueryParameter().setString(userData.getUser_name()).setString(userData.getEmail()).setString(userData.getPassword());
@@ -239,7 +239,7 @@ public class UserDaoImpl {
     }
 
     public void updateUser(UserData userData) {
-        String sql = "Update UserDataSet set user_name = ?,email=?,password=?,updated_at = now() WHERE userId = ?";
+        String sql = "Update UserDataSet set user_name = ?,email=?,userPassword=?,updated_at = now() WHERE userId = ?";
         //For any confusions regarding templates please check in commons dao template package.
         // These have been created so that you don't have to make open and close connection for every sql query.
         QueryParameter queryParameter = new QueryParameter().setString(userData.getUser_name()).setString(userData.getEmail()).setString(userData.getPassword()).setInt(userData.getUserId());
@@ -308,5 +308,57 @@ public class UserDaoImpl {
                 .setInt(userArticleData.getUserId())
                 .setInt(userArticleData.getArticleId());
         new UpdateTemplateImpl(sql,queryParameter){};
+    }
+
+    public UserData getUserDataFromDb(int userId) {
+        UserData userData = new UserData();
+        String sql = "Select * from UserDataSet where userId = ?";
+        new SingleRowQueryTemplateImpl(sql, new QueryParameter().setInt(userId)) {
+            @Override
+            public void processResult() throws Exception {
+                userData.setUserId(this.resultSet.getInt("userId"))
+                        .setUser_name(this.resultSet.getString("user_name"))
+                        .setPassword(this.resultSet.getString("userPassword"))
+                        .setEmail(this.resultSet.getString("email"))
+                        .setCreated_at(this.resultSet.getString("created_at"))
+                        .setUpdated_at(this.resultSet.getString("updated_at"));
+            }
+        };
+        return userData;
+    }
+
+    public UserPostData getUserPostDataFromDb(int userId, int postId) {
+        UserPostData userPostData = new UserPostData();
+        String sql = "Select * from Posts WHERE userId = ? AND postId = ?";
+        new SingleRowQueryTemplateImpl(sql, new QueryParameter().setInt(userId).setInt(postId)) {
+            @Override
+            public void processResult() throws Exception {
+                userPostData.setPostId(this.resultSet.getInt("postId"))
+                        .setUserId(this.resultSet.getInt("userId"))
+                        .setUserText(this.resultSet.getString("userText"))
+                        .setImageLink(this.resultSet.getString("imageLink"))
+                        .setCreated_at(this.resultSet.getString("created_at"))
+                        .setUpdated_at(this.resultSet.getString("updated_at"));
+            }
+        };
+        return userPostData;
+    }
+
+    public UserArticleData getUserArticleDataFromDb(int userId, int articleId) {
+        UserArticleData userArticleData = new UserArticleData();
+        String sql = "Select * from Article WHERE userId = ? AND articleId = ?";
+        new SingleRowQueryTemplateImpl(sql, new QueryParameter().setInt(userId).setInt(articleId)) {
+            @Override
+            public void processResult() throws Exception {
+                userArticleData.setArticleId(this.resultSet.getInt("articleId"))
+                        .setUserId(this.resultSet.getInt("userId"))
+                        .setArticle_title(this.resultSet.getString("article_title"))
+                        .setArticle_text(this.resultSet.getString("article_text"))
+                        .setArticle_image(this.resultSet.getString("article_image"))
+                        .setCreated_at(this.resultSet.getString("created_at"))
+                        .setUpdated_at(this.resultSet.getString("updated_at"));
+            }
+        };
+        return userArticleData;
     }
 }

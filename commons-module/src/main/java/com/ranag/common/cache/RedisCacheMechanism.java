@@ -6,20 +6,25 @@ import org.apache.logging.log4j.Logger;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
-import redis.clients.jedis.Tuple;
+//import redis.clients.jedis.Tuple;
 
 import java.time.Duration;
 
 public class RedisCacheMechanism {
     private static final Logger log = LogManager.getLogger(RedisCacheMechanism.class);
-    private final static String CACHE_HOST = System.getProperty("CACHE_HOST","localhost");
+    private final static String CACHE_HOST = System.getProperty("CACHE_HOST","127.0.0.1");
+    private final static String USER_KEY="USER_KEY_";
+    private final static String POST="_POST_";
+    private final static String ARTICLE="_ARTICLE_";
 
     private static JedisPool readJedisPool = null;
     private static JedisPool writeJedisPool = null;
 
     static {
         final JedisPoolConfig poolConfig = buildPoolConfig();
-        readJedisPool = new JedisPool(poolConfig, CACHE_HOST);
+        System.out.println("CACHE_HOST:"+CACHE_HOST);
+        readJedisPool = new JedisPool(CACHE_HOST,6379);
+        writeJedisPool = new JedisPool(CACHE_HOST,6379);
     }
 
 
@@ -141,6 +146,7 @@ public class RedisCacheMechanism {
     }
 
     public static JedisPoolConfig buildPoolConfig() {
+        System.out.println("----REDIS----CACHE-----");
         int cachePoolMaxTotal = Integer.parseInt(System.getProperty("CACHE_POOL_MAX_TOTAL","100"));
         int cachePoolMaxIdle = Integer.parseInt(System.getProperty("CACHE_POOL_MAX_IDLE","50"));
         final JedisPoolConfig poolConfig = new JedisPoolConfig();
@@ -153,4 +159,15 @@ public class RedisCacheMechanism {
         return poolConfig;
     }
 
+    public static String getUserCacheKey(int userId) {
+        return USER_KEY+userId;
+    }
+
+    public static String getUserPostCacheKey(int userId, int postId) {
+        return USER_KEY+userId+POST+postId;
+    }
+
+    public static String getUserArticleCacheKey(int userId, int articleId) {
+        return USER_KEY+userId+ARTICLE+articleId;
+    }
 }
